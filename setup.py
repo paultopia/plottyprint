@@ -1,8 +1,10 @@
 from setuptools import setup
 
+
 def readme():
     with open('README.rst') as f:
         return f.read()
+
 
 setup(name='plottyprint',
       version='0.1',
@@ -22,4 +24,5 @@ setup(name='plottyprint',
       license='MIT',
       packages=['plottyprint'],
       python_requires='>=3',
+      install_requires=['numpy', 'matplotlib', 'statsmodels', 'scipy'],
       zip_safe=False)
