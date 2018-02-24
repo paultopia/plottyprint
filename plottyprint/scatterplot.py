@@ -47,16 +47,14 @@ def scatterplot(x, y, title="",
                   fontsize=labelsize,
                   labelpad=labelsize * 0.7,
                   color=(0.15, 0.15, 0.15),
-                  fontname='Lato')
+                  fontname=font)
     ax.set_ylabel(textwrap.fill(ylabel, ylabel_wrapping),
                   fontsize=labelsize,
                   labelpad=labelsize * 2,
                   color=(0.15, 0.15, 0.15),
                   rotation='horizontal',
                   horizontalalignment='center',
-                  fontname='Lato')
-    # to fix craziness with matplotlib fonts see
-    # http://andresabino.com/2015/08/18/fonts-and-matplotlib/
+                  fontname=font)
 
     # matplotlib tends to get broken if you don't sort the data first, so
     x_sorted = np.sort(x)
