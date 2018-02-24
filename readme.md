@@ -36,19 +36,19 @@ Here are some examples.
 
 Scatterplot, with fit line and confidence region. 
 
-[IMAGE GOES HERE]
+![scatterplot](scatterplot.svg)
 
 Histogram, no KDE estimator.
 
-[IMAGE GOES HERE]
+![simple histogram](histogram_simple.svg)
 
 Histogram, with KDE estimator
 
-[IMAGE GOES HERE]
+![fancy histogram](histogram_fancy.svg)
 
 Boxplot
 
-[IMAGE GOES HERE]
+![boxplot](boxplot.svg)
 
 ## Installation
 
