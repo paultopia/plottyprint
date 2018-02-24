@@ -102,9 +102,7 @@ There are three functions, each corresponding to a plot.  Each takes one or more
 
 - bins can be a number of bins, or "auto" to let numpy come up with something for you
 
-- density you probably don't need to mess with (and I may remove it in a future version), but if you set it for true you'll get a histogram in the form of a probability density. See [the matplot lib docs](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.hist.html) for more. This strikes me as a bad choice for most basic use cases: usually you'll want counts.
-
-- add_kde controls whether you want to slap a kernel density estimator plot on top of your histogram. If you do want to do this, it'll change the scale of the histogram: it will become density rather than counts, and, since the y label on a density histogram is anywhere between confusing and outright deceptive, it gets removed.  Call me paternalistic.
+- add_kde controls whether you want to slap a kernel density estimator plot on top of your histogram. If you do want to do this, it'll change the scale of the histogram: it will become probability density rather than counts, and, since the y label on a density histogram is anywhere between confusing and outright deceptive, it gets removed.  Call me paternalistic.
 
 - kernel_param is a parameter that goes into the kernel density estimator. Scipy does [a lot of fancy math](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html) with this, but you can think of it as kind of similar to the bandwidth parameter in the [R kde function](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/density.html).  For practical purposes, larger numers should produce smoother plots, but it's probably worth playing with interactively. 
 

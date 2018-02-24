@@ -6,7 +6,6 @@ from utils import remove_chart_junk
 
 def histogram(variable,
               bins="auto",
-              density=False,
               title="",
               numticks=5,
               labelsize=15,
@@ -26,14 +25,19 @@ def histogram(variable,
 
     ax = remove_chart_junk(ax, numticks, labelsize)
 
+    if add_kde:
+        density = True
+        show_n = False
+    else:
+        density = False
+
     if show_n:
         ax.set_xlabel("n = " + str(var.size),
                       fontsize=labelsize,
                       labelpad=labelsize * 0.7,
                       color=(0.15, 0.15, 0.15),
-                      fontname='Lato')
-    if add_kde:
-        density = True
+                      fontname=font)
+
     ax.hist(var, bins=bins, density=density, lw=0)
 
     # fix bar colors
