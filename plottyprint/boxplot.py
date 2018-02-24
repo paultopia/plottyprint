@@ -8,7 +8,8 @@ def boxplot(variables,
             title="",
             numticks=3,
             labelsize=12,
-            size=(10, 10),):
+            size=(10, 10),
+            font="Lato"):
     arrays = [np.sort(np.array(x)) for x in variables]
 
     fig = plt.figure(figsize=size)
@@ -16,7 +17,7 @@ def boxplot(variables,
 
     ax.set_title(title + '\n',
                  fontsize=labelsize * 1.25,
-                 fontname='Lato')
+                 fontname=font)
 
     ax = remove_chart_junk(ax, numticks, labelsize)
 

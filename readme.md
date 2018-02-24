@@ -68,7 +68,7 @@ There are three functions, each corresponding to a plot.  Each takes one or more
 
 ### Scatterplot
 
-**scatterplot(x, y, title="", xlabel="", ylabel="", numticks=3, labelsize=15, dotsize=8, ylabel_wrapping=6, size=(10, 10), fit_line=True, confidence=True, alpha=0.05)**
+**scatterplot(x, y, title="", xlabel="", ylabel="", numticks=3, labelsize=15, dotsize=8, ylabel_wrapping=6, size=(10, 10), fit_line=True, confidence=True, alpha=0.05, font="Lato")**
 
 - x and y are, obviously,  your data.
 
@@ -92,9 +92,11 @@ There are three functions, each corresponding to a plot.  Each takes one or more
 
 - alpha is the width of your confidence interval. The default represents the good old fashioned 95% interval.
 
+- font is the name of the font for labels.
+
 ### Histogram
 
-**histogram(variable, bins="auto", density = False, title="", numticks=5, labelsize=15, size=(10, 10), add_kde=False, kernel_param = 0.4, show_n = True)**
+**histogram(variable, bins="auto", density = False, title="", numticks=5, labelsize=15, size=(10, 10), add_kde=False, kernel_param = 0.4, show_n = True, font="Lato")**
 
 - variable is, obviously, your data.
 
@@ -112,7 +114,7 @@ Everything else is the same as in `scatterplot`.
 
 ### Boxplot
 
-**boxplot(variables, labels, title="", numticks=3, labelsize=12, size=(10, 10))**
+**boxplot(variables, labels, title="", numticks=3, labelsize=12, size=(10, 10), font="Lato")**
 
 Everything here is the same as in `scatterplot` except that variables is a list of, well, variables (numpy arrays etc.), and labels is a list of labels.  You can put as many variables in here as you can squeeze in.
 

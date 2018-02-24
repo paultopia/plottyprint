@@ -22,7 +22,8 @@ def scatterplot(x, y, title="",
                 size=(10, 10),
                 fit_line=True,
                 confidence=True,
-                alpha=0.05):
+                alpha=0.05,
+                font="Lato"):
 
     # everything works better with numpy arrays
     x = np.array(x)
@@ -41,7 +42,7 @@ def scatterplot(x, y, title="",
     # label all the things
     ax.set_title(title + '\n',
                  fontsize=labelsize * 1.25,
-                 fontname='Lato')
+                 fontname=font)
     ax.set_xlabel(xlabel,
                   fontsize=labelsize,
                   labelpad=labelsize * 0.7,

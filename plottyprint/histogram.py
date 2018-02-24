@@ -13,7 +13,8 @@ def histogram(variable,
               size=(10, 10),
               add_kde=False,
               kernel_param=0.4,
-              show_n=True):
+              show_n=True,
+              font="Lato"):
     var = np.sort(np.array(variable))
 
     fig = plt.figure(figsize=size)
@@ -21,7 +22,7 @@ def histogram(variable,
 
     ax.set_title(title + '\n',
                  fontsize=labelsize * 1.25,
-                 fontname='Lato')
+                 fontname=font)
 
     ax = remove_chart_junk(ax, numticks, labelsize)
 
