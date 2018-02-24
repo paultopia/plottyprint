@@ -2,14 +2,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 from utils import remove_chart_junk
 
-def timeseries(in_dates, events, labels = ["", ""], title="", numticks=3, labelsize=12, size=(10, 10),):
+
+def timeseries(in_dates,
+               events,
+               labels=["", ""],
+               title="",
+               numticks=3,
+               labelsize=12,
+               size=(10, 10),
+               font="Lato"):
     fig = plt.figure(figsize=size)
     ax = fig.add_subplot(1, 1, 1)
     numticks = 5
 
     ax.set_title(title + '\n',
                  fontsize=labelsize * 1.25,
-                 fontname='Lato')
+                 fontname=font)
 
     ax = remove_chart_junk(ax, numticks, labelsize)
 
