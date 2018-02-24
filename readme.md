@@ -14,7 +14,7 @@ Right now, the amount of effort it takes to go from from no plots at all or real
 
 1.  Default matplotlib plotting is ugly, and making attractive plots is difficult.
 
-2.  There are many Python packages that make it easy create beautiful plots on top of matplotlib, such as [seaborn](https://seaborn.pydata.org), [bokeh](https://bokeh.pydata.org/en/latest/), and [plotly](https://plot.ly/python/).  However, they are built for web or interactive use, not for printing. They have lots of colors, default proportions appropriate for screen usage, and often interactive elements that don't make sense on paper.  While it's possibly to convince those libraries to make plots for print, it's a lot of work.  (If you want to do that, I recommend using the Python port of [ggplot](http://ggplot.yhathq.com). 
+2.  There are many Python packages that make it easy create beautiful plots on top of matplotlib, such as [seaborn](https://seaborn.pydata.org), [bokeh](https://bokeh.pydata.org/en/latest/), and [plotly](https://plot.ly/python/) are my favorite examples, but the readme to [Altair](https://github.com/altair-viz/altair) lists numerous other excellent options.  However, these options are all built for web or interactive use, not for printing. They have lots of colors, default proportions appropriate for screen usage, and often interactive elements that don't make sense on paper.  While it's possibly to convince those libraries to make plots for print, it's a lot of work.  (If you want to do that, I recommend using the Python port of [ggplot](http://ggplot.yhathq.com).) 
 
 ## The Plottyprint Solution
 
