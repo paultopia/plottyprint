@@ -19,9 +19,18 @@ def remove_chart_junk(axis, numticks, labelsize):
                      labelcolor=(0.25, 0.25, 0.25))
     return axis
 
+
 class PlottyFig(matplotlib.figure.Figure):
-    def change_title(self, title):
-        self._axstack.as_list()[0].set_title(title)
 
     def get_main_plot(self):
         return self._axstack.as_list()[0]
+
+    def get_lines(self):
+        return self._axstack.as_list()[0].lines
+
+    def set_line_width(self, width):
+        for line in self._axstack.as_list()[0].lines:
+            line._linewidth = width
+
+    def change_title(self, title):
+        self._axstack.as_list()[0].set_title(title)

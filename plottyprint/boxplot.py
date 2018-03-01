@@ -24,5 +24,5 @@ def boxplot(variables,
 
     bp = ax.boxplot(arrays, notch=notch, sym="k.", labels=labels)
     for element in ['boxes', 'whiskers', 'fliers', 'means', 'medians', 'caps']:
-        plt.setp(bp[element], color="black")
+        plt.setp(bp[element], color="black", linewidth=1.75)
     return fig

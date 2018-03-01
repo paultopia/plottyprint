@@ -146,4 +146,8 @@ As noted above, the PlottyFig object supplies several convenience methods, which
 
 **instance.get_main_plot()** returns the matplotlib Axes object containing the actual plot---this is where you do things like change the title, tweak borders, fonts, etc., or, for more advanced uses, overlay plots of extra data onto the existing axis and suchlike. 
 
+**instance.get_lines()** returns a list of the lines that make up the plot.
+
 **instance.change_title(title)** changes the title of an existing plot.
+
+**instance.set_line_width(width)** sets the width of the lines in the plot.
