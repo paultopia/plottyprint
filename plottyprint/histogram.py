@@ -58,5 +58,6 @@ def histogram(variable,
         dy = ds(ls)
         ax.plot(ls, dy, color=(0.1, 0.1, 0.1, 0.8))
         ax.set_yticks([])
+        ax.spines['left'].set_visible(False)
 
     return fig
