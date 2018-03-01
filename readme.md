@@ -108,7 +108,7 @@ Each function returns a `PlottyFig` object. This is just a subclass of matplotli
 
 - kernel_param is a parameter that goes into the kernel density estimator. Scipy does [a lot of fancy math](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html) with this, but you can think of it as kind of similar to the bandwidth parameter in the [R kde function](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/density.html).  For practical purposes, larger numers should produce smoother plots, but it's probably worth playing with interactively. 
 
-- show_n is a boolean determining whether to have a y axis with the number of observations per bin or not. As noted above, this is automatically turned off if you add a kernel density estimator. 
+- show_n is a boolean determining whether to show the number of observations as a label on the x axis or not. 
 
 Everything else is the same as in `scatterplot`.
 

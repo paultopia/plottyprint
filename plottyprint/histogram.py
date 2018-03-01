@@ -27,7 +27,6 @@ def histogram(variable,
 
     if add_kde:
         density = True
-        show_n = False
     else:
         density = False
 
