@@ -2,7 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import gaussian_kde
-from utils import remove_chart_junk
+from utils import remove_chart_junk, PlottyFig
 
 def histogram(variable,
               bins="auto",
@@ -16,7 +16,7 @@ def histogram(variable,
               font="Lato"):
     var = np.sort(np.array(variable))
 
-    fig = plt.figure(figsize=size)
+    fig = plt.figure(figsize=size, FigureClass=PlottyFig)
     ax = fig.add_subplot(1, 1, 1)
 
     ax.set_title(title + '\n',

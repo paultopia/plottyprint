@@ -3,7 +3,7 @@ import numpy as np
 import statsmodels.api as sm
 import textwrap
 from statsmodels.stats.outliers_influence import summary_table
-from utils import remove_chart_junk
+from utils import remove_chart_junk, PlottyFig
 
 
 def get_ci_values(fitted_regression, alpha):
@@ -36,7 +36,7 @@ def scatterplot(x, y, title="",
             ci_low, ci_high = get_ci_values(regline, alpha)
 
     # baseline plot
-    fig = plt.figure(figsize=size)
+    fig = plt.figure(figsize=size, FigureClass=PlottyFig)
     ax = fig.add_subplot(1, 1, 1)
 
     # label all the things

@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from utils import remove_chart_junk
+from utils import remove_chart_junk, PlottyFig
 
 
 def timeseries(in_dates,
@@ -11,7 +11,7 @@ def timeseries(in_dates,
                labelsize=12,
                size=(10, 10),
                font="Lato"):
-    fig = plt.figure(figsize=size)
+    fig = plt.figure(figsize=size, FigureClass=PlottyFig)
     ax = fig.add_subplot(1, 1, 1)
     numticks = 5
 

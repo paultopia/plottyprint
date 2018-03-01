@@ -1,3 +1,4 @@
+import matplotlib
 def remove_chart_junk(axis, numticks, labelsize):
 
     # reduce ticks
@@ -17,3 +18,10 @@ def remove_chart_junk(axis, numticks, labelsize):
                      pad=labelsize * 0.66,
                      labelcolor=(0.25, 0.25, 0.25))
     return axis
+
+class PlottyFig(matplotlib.figure.Figure):
+    def change_title(self, title):
+        self._axstack.as_list()[0].set_title(title)
+
+    def get_main_plot(self):
+        return self._axstack.as_list()[0].set_title(title)
