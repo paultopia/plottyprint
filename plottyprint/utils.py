@@ -24,4 +24,4 @@ class PlottyFig(matplotlib.figure.Figure):
         self._axstack.as_list()[0].set_title(title)
 
     def get_main_plot(self):
-        return self._axstack.as_list()[0].set_title(title)
+        return self._axstack.as_list()[0]
