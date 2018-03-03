@@ -24,5 +24,5 @@ setup(name='plottyprint',
       license='MIT',
       packages=['plottyprint'],
       python_requires='>=3',
-      install_requires=['numpy', 'matplotlib', 'statsmodels', 'scipy'],
+      install_requires=['numpy', 'matplotlib>=2.1.1', 'statsmodels', 'scipy'],
       zip_safe=False)
