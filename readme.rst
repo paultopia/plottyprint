@@ -41,7 +41,8 @@ The Challenges
    interactive elements that don’t make sense on paper. While it’s
    possibly to convince those libraries to make plots for print, it’s a
    lot of work. (If you want to do that, I recommend using the Python
-   port of `ggplot <http://ggplot.yhathq.com>`__.)
+   port of `ggplot <http://ggplot.yhathq.com>`__ or the plotting
+   convenience functions `in Pandas <https://pandas.pydata.org/pandas-docs/stable/visualization.html>`__.)
 
 The Plottyprint Solution
 ------------------------
@@ -90,35 +91,30 @@ Scatterplot, with fit line and confidence region.
 .. figure:: scatterplot.svg
    :alt: scatterplot
 
-   scatterplot
 
 Histogram, no KDE estimator.
 
 .. figure:: histogram_simple.svg
    :alt: simple histogram
 
-   simple histogram
 
 Histogram, with KDE estimator
 
 .. figure:: histogram_fancy.svg
    :alt: fancy histogram
 
-   fancy histogram
 
 Boxplot
 
 .. figure:: boxplot.svg
    :alt: boxplot
 
-   boxplot
 
 Time Series
 
 .. figure:: timeseries.svg
    :alt: time series
 
-   time series
 
 Installation
 ------------
@@ -129,15 +125,15 @@ Usage
 -----
 
 There are three functions, each corresponding to a plot. Each takes one
-or more numpy arrays, or anything that can be cast into a numpy array
+or more Numpy arrays, or anything that can be cast into a Numpy array
 with ``np.array()`` without going wrong (lists, Pandas ``DataFrame``
 columns, etc.), plus some configuration.
 
 Each function returns a ``PlottyFig`` object. This is just a subclass of
-matplotlib.figure.Figure, with a handful of convenience methods
+``matplotlib.figure.Figure``, with a handful of convenience methods
 (documented below) to tweak your plots after you create them and smooth
-out the rough edges of the matplotlib api. Because it’s a figure
-subclass, those who know matplotlib can also dig in deeper to tweak to
+out the rough edges of the Matplotlib api. Because it’s a figure
+subclass, those who know Matplotlib can also dig in deeper to tweak to
 your heart’s content.
 
 Scatterplot
@@ -154,7 +150,7 @@ fit_line=True, confidence=True, alpha=0.05, font=“Lato”)**
 -  xlabel and ylabel are, obviously, the labels for your data.
 
 -  numticks is (wait for it) the number of ticks to show on each axis.
-   For mysterious reasons, sometimes matplotlib likes to give you a
+   For mysterious reasons, sometimes Matplotlib likes to give you a
    little more or fewer than the number asked for, but at any rate the
    default is a nice small number that will show the scale of the data
    without overwhelming the reader with noise.
@@ -180,7 +176,7 @@ fit_line=True, confidence=True, alpha=0.05, font=“Lato”)**
 -  alpha is the width of your confidence interval. The default
    represents the good old fashioned 95% interval.
 
--  font is the name of the font for labels.
+-  font is the name of the font for labels. See below for some caveats on this.
 
 Histogram
 ~~~~~~~~~
@@ -211,7 +207,7 @@ numticks=5, labelsize=15, size=(10, 10), add_kde=False, kernel_param =
    but it’s probably worth playing with interactively.
 
 -  show_n is a boolean determining whether to show the number of
-   observations as a label on the x axis or not.
+   observations as a label below the x axis or not.
 
 Everything else is the same as in ``scatterplot``.
 
@@ -242,14 +238,14 @@ labelsize=12, size=(10, 10), font=“Lato”, notch=True)**
 -  labels is, like in boxplot, a list of labels for your events.
 
 -  notch is whether to put a notch in the boxes marking out a confidence
-   interval around the median. Uses the matplotlib default, which isn’t
+   interval around the median. Uses the Matplotlib default, which isn’t
    terribly clearly specified in `the
    documentation <https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html>`__,
    but I assume (from the bootstrap parameter in there) is 95%.
 
 Otherwise, the parameters are the same as above. However, you should
 note that numticks doesn’t control the number of entries on the x axis
-(time). Messing with that is actually a terribly messy procedure, but
+(time). Messing with that is actually a terribly gnarly procedure, but
 the defaults seem to be working.
 
 Possible Glitches
@@ -260,17 +256,17 @@ Possible Glitches
    probably because I did something silly like rely on modern division
    or the latest fancy string formatting, file an issue and I’ll fix it.
 
--  Fonts are a problem with matplotlib, and if you run into font
+-  Fonts are a problem with Matplotlib, and if you run into font
    difficulties then see `this blog
    post <http://andresabino.com/2015/08/18/fonts-and-matplotlib/>`__ for
    a fix. I’ve set Lato as the font for everything because it’s pretty
    and `on google fonts <https://fonts.google.com/specimen/Lato>`__.
 
 -  I haven’t quite sorted out timeseries date ranges yet. Right now it
-   just uses the matplotlib defaults, and uses the ordinary plotting
+   just uses the Matplotlib defaults, and uses the ordinary plotting
    method rather than the ``plot_date`` method to generate
    (``plot_date`` produces mysterious and bizarre results). A PR to make
-   this a little nicer would be welcome.
+   this a little nicer would be very welcome.
 
 PlottyFig Object
 ~~~~~~~~~~~~~~~~
@@ -279,10 +275,10 @@ As noted above, the PlottyFig object supplies several convenience
 methods, which can be called on any instance generated by this library
 (denoted ``instance`` below), including:
 
-**instance.get_main_plot()** returns the matplotlib Axes object
+**instance.get_main_plot()** returns the Matplotlib ``Axes`` object
 containing the actual plot—this is where you do things like change the
 title, tweak borders, fonts, etc., or, for more advanced uses, overlay
-plots of extra data onto the existing axis and suchlike.
+plots of extra data onto the existing axis and suchlike. Mutating the object returned by this function should mutate the underlying figure.
 
 **instance.get_lines()** returns a list of the lines that make up the
 plot.
@@ -293,7 +289,7 @@ plot.
 plot.
 
 Right now, this class is a stub for future development: I like the idea
-of smoothing out the matplotlib api a little, but don’t know what
+of smoothing out the Matplotlib api a little, but don’t know what
 convenience methods would be most useful. More to be added in future
 versions.
 
@@ -305,12 +301,17 @@ Just file an issue or a PR.
 Current priorities include:
 
 1. Making the time series better, particularly with respect to
-   customization options for the x axis ticks. Time series ticks are a
-   really messy part of Matplotlib.
+   customization options for the x axis ticks.
 
 2. Some way to apply the stylistic choices in here to plots generated
    from other libraries like Seaborn (perhaps a Matplotlib stylesheet,
    or some heavy hacking around with rcparams).
+
+3. Tests. (Maybe by comparing function results against a SVG string?)
+
+4. More useful ``PlottyFig`` convenience methods.
+
+5. A scatterplot matrix (like the one produced by Pandas).
 
 License
 -------
