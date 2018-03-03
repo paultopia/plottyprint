@@ -1,8 +1,6 @@
 # Plottyprint
 
-(TODO: convert this to reStructuredText, get image examples in, test a bit more, maybe tweak density option in hist and boxplot opts then pypi it up)
-
-##The Goal
+## The Goal
 
 Make simple data visualizations in Python that are **easy**, **attractive**, and most importantly **appropriate for dead-tree printing** (like in academic journals, conference posters, or newspapers), with a bias toward greyscale in case color printing is expensive.
 
@@ -14,7 +12,7 @@ Right now, the amount of effort it takes to go from from no plots at all or real
 
 1.  Default matplotlib plotting is ugly, and making attractive plots is difficult.
 
-2.  There are many Python packages that make it easy create beautiful plots on top of matplotlib, such as [seaborn](https://seaborn.pydata.org), [bokeh](https://bokeh.pydata.org/en/latest/), and [plotly](https://plot.ly/python/) are my favorite examples, but the readme to [Altair](https://github.com/altair-viz/altair) lists numerous other excellent options.  However, these options are all built for web or interactive use, not for printing. They have lots of colors, default proportions appropriate for screen usage, and often interactive elements that don't make sense on paper.  While it's possibly to convince those libraries to make plots for print, it's a lot of work.  (If you want to do that, I recommend using the Python port of [ggplot](http://ggplot.yhathq.com).) 
+2.  There are many Python packages that make it easy create beautiful plots on top of Matplotlib, such as [Seaborn](https://seaborn.pydata.org), [Bokeh](https://bokeh.pydata.org/en/latest/), and [Plotly](https://plot.ly/python/) are my favorite examples, but the readme to [Altair](https://github.com/altair-viz/altair) lists numerous other excellent options.  However, these options are all built for web or interactive use, not for printing. They have lots of colors, default proportions appropriate for screen usage, and often interactive elements that don't make sense on paper.  While it's possibly to convince those libraries to make plots for print, it's a lot of work.  (If you want to do that, I recommend using the Python port of [ggplot](http://ggplot.yhathq.com).) 
 
 ## The Plottyprint Solution
 
@@ -28,13 +26,13 @@ This very small library aims to provide a handful of basic and attractive printa
 
 4.  A **time series plot** that gives you a line of one or two events over time. The time series plot is experimental, and might not work with your data; I'll try to improve it in subsequent versions.
 
-This, obviously, represents the science communicator's basic toolkit for displaying the relationship between two variables, the shape of one variable, and the relationship between mean, interquartile range, and outliers for several variables, respectively.
+This, obviously, represents the science communicator's basic toolkit for displaying the relationship between two variables, the shape of one variable, the relationship between mean, interquartile range, and outliers for several variables, and variable behavior over time, respectively.
 
 Each of these elements is presented in high-contrast greyscale, and has all of matplotlib's default [chart junk](https://en.m.wikipedia.org/wiki/Chartjunk) ruthlessly ripped out. 
 
-In this 0.1 release, there are only a handful of customization options, but over time I plan to add more plot types and add a bit more customization. Moreover, every plot returns a matplotlib figure, so if you know matplotlib you can always do your own customization after the fact. 
+In this 0.1 release, there are only a handful of customization options, but over time I plan to add more plot types and add a bit more customization. Moreover, every plot returns a (subclass of a) Matplotlib figure, so if you know matplotlib you can always do your own customization after the fact. 
 
-Here are some examples.  
+Here are some examples.
 
 Scatterplot, with fit line and confidence region. 
 
@@ -59,8 +57,6 @@ Time Series
 ## Installation
 
 `pip install plottyprint` 
-
-[BUT NOT YET, ON PYPI SOON]
 
 ## Usage
 
@@ -151,3 +147,19 @@ As noted above, the PlottyFig object supplies several convenience methods, which
 **instance.change_title(title)** changes the title of an existing plot.
 
 **instance.set_line_width(width)** sets the width of the lines in the plot.
+
+Right now, this class is a stub for future development: I like the idea of smoothing out the matplotlib api a little, but don't know what convenience methods would be most useful. More to be added in future versions.
+
+## Contributing
+
+Just file an issue or a PR. 
+
+Current priorities include: 
+
+1.  Making the time series better, particularly with respect to customization options for the x axis ticks. Time series ticks are a really messy part of Matplotlib. 
+
+2.  Some way to apply the stylistic choices in here to plots generated from other libraries like Seaborn (perhaps a Matplotlib stylesheet, or some heavy hacking around with rcparams).
+
+## License
+
+MIT.
