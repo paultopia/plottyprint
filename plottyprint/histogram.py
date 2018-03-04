@@ -2,7 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import gaussian_kde
-from utils import remove_chart_junk, PlottyFig
+from .utils import remove_chart_junk, PlottyFig
 
 def histogram(variable,
               bins="auto",

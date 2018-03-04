@@ -251,10 +251,11 @@ the defaults seem to be working.
 Possible Glitches
 -----------------
 
--  I created this with a recent Python 3 release. I haven’t tested it in
-   Python 2, but I think it should work. If it breaks in Python 2 it’s
-   probably because I did something silly like rely on modern division
-   or the latest fancy string formatting, file an issue and I’ll fix it.
+-  This requires python 3, and a recent version of Matplotlib.
+   I've tested it in Python 3.6.4 with Matplotlib 2.1.2.
+   In particular, if ``histogram`` breaks, or if ``scatterplot``
+   produces strange lines around the confidence bands, that's
+   going to be an obsolete Matplotlib version.
 
 -  Fonts are a problem with Matplotlib, and if you run into font
    difficulties then see `this blog

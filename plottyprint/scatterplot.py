@@ -3,7 +3,7 @@ import numpy as np
 import statsmodels.api as sm
 import textwrap
 from statsmodels.stats.outliers_influence import summary_table
-from utils import remove_chart_junk, PlottyFig
+from .utils import remove_chart_junk, PlottyFig
 
 
 def get_ci_values(fitted_regression, alpha):

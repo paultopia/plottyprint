@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from utils import remove_chart_junk, PlottyFig
+from .utils import remove_chart_junk, PlottyFig
 
 
 def timeseries(in_dates,
