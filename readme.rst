@@ -8,7 +8,7 @@ Make simple data visualizations in Python that are **easy**,
 **attractive**, and most importantly **appropriate for dead-tree
 printing** (like in academic journals, conference posters, or
 newspapers), with a bias toward greyscale in case color printing is
-expensive.
+expensive (or just not allowed).
 
 This very small library is targeted at the easiest 60% or so of plots
 that social scientists and student journalists and other
