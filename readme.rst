@@ -88,31 +88,31 @@ Here are some examples.
 
 Scatterplot, with fit line and confidence region.
 
-.. figure:: https://raw.githubusercontent.com/paultopia/plottyprint/master/scatterplot.svg
+.. figure:: scatterplot.svg
    :alt: scatterplot
 
 
 Histogram, no KDE estimator.
 
-.. figure:: https://raw.githubusercontent.com/paultopia/plottyprint/master/histogram_simple.svg
+.. figure:: histogram_simple.svg
    :alt: simple histogram
 
 
 Histogram, with KDE estimator
 
-.. figure:: https://raw.githubusercontent.com/paultopia/plottyprint/master/histogram_fancy.svg
+.. figure:: histogram_fancy.svg
    :alt: fancy histogram
 
 
 Boxplot
 
-.. figure:: https://raw.githubusercontent.com/paultopia/plottyprint/master/boxplot.svg
+.. figure:: boxplot.svg
    :alt: boxplot
 
 
 Time Series
 
-.. figure:: https://raw.githubusercontent.com/paultopia/plottyprint/master/timeseries.svg
+.. figure:: timeseries.svg
    :alt: time series
 
 
