@@ -29,8 +29,8 @@ The Challenges
 1. Default matplotlib plotting is ugly, and making attractive plots is
    difficult.
 
-2. There are many Python packages that make it easy create beautiful
-   plots on top of Matplotlib, such as
+2. There are many Python packages that make it easy to create beautiful
+   plots on top of Matplotlib. 
    `Seaborn <https://seaborn.pydata.org>`__,
    `Bokeh <https://bokeh.pydata.org/en/latest/>`__, and
    `Plotly <https://plot.ly/python/>`__ are my favorite examples, but
@@ -40,8 +40,8 @@ The Challenges
    colors, default proportions appropriate for screen usage, and often
    interactive elements that don’t make sense on paper. While it’s
    possibly to convince those libraries to make plots for print, it’s a
-   lot of work. (If you want to do that, I recommend using the Python
-   port of `ggplot <http://ggplot.yhathq.com>`__ or the plotting
+   lot of work. (If you want to do that, I recommend using a Python
+   port of `ggplot <https://github.com/has2k1/plotnine>`__ or the plotting
    convenience functions `in Pandas <https://pandas.pydata.org/pandas-docs/stable/visualization.html>`__.)
 
 The Plottyprint Solution
