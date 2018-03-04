@@ -248,27 +248,6 @@ note that numticks doesn’t control the number of entries on the x axis
 (time). Messing with that is actually a terribly gnarly procedure, but
 the defaults seem to be working.
 
-Possible Glitches
------------------
-
--  This requires python 3, and a recent version of Matplotlib.
-   I've tested it in Python 3.6.4 with Matplotlib 2.1.2.
-   In particular, if ``histogram`` breaks, or if ``scatterplot``
-   produces strange lines around the confidence bands, that's
-   going to be an obsolete Matplotlib version.
-
--  Fonts are a problem with Matplotlib, and if you run into font
-   difficulties then see `this blog
-   post <http://andresabino.com/2015/08/18/fonts-and-matplotlib/>`__ for
-   a fix. I’ve set Lato as the font for everything because it’s pretty
-   and `on google fonts <https://fonts.google.com/specimen/Lato>`__.
-
--  I haven’t quite sorted out timeseries date ranges yet. Right now it
-   just uses the Matplotlib defaults, and uses the ordinary plotting
-   method rather than the ``plot_date`` method to generate
-   (``plot_date`` produces mysterious and bizarre results). A PR to make
-   this a little nicer would be very welcome.
-
 PlottyFig Object
 ~~~~~~~~~~~~~~~~
 
@@ -293,6 +272,27 @@ Right now, this class is a stub for future development: I like the idea
 of smoothing out the Matplotlib api a little, but don’t know what
 convenience methods would be most useful. More to be added in future
 versions.
+
+Possible Glitches
+-----------------
+
+-  This requires python 3, and a recent version of Matplotlib.
+   I've tested it in Python 3.6.4 with Matplotlib 2.1.2.
+   In particular, if ``histogram`` breaks, or if ``scatterplot``
+   produces strange lines around the confidence bands, that's
+   going to be an obsolete Matplotlib version.
+
+-  Fonts are a problem with Matplotlib, and if you run into font
+   difficulties then see `this blog
+   post <http://andresabino.com/2015/08/18/fonts-and-matplotlib/>`__ for
+   a fix. I’ve set Lato as the font for everything because it’s pretty
+   and `on google fonts <https://fonts.google.com/specimen/Lato>`__.
+
+-  I haven’t quite sorted out timeseries date ranges yet. Right now it
+   just uses the Matplotlib defaults, and uses the ordinary plotting
+   method rather than the ``plot_date`` method to generate
+   (``plot_date`` produces mysterious and bizarre results). A PR to make
+   this a little nicer would be very welcome.
 
 Contributing
 ------------
